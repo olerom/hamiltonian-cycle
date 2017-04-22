@@ -17,6 +17,14 @@ graph_matrix = [
     [1, 0, 0, 0, 0, 1, 0]
 ]
 
+graph_matrix_test = [
+    [0, 1, 1, 0, 0],
+    [1, 0, 0, 1, 0],
+    [1, 0, 0, 0, 1],
+    [0, 1, 0, 0, 1],
+    [0, 0, 1, 1, 0]
+]
+
 # Graph for dirac theorem:
 ore_dirac_graph = [
     [0, 1, 1, 1, 1],

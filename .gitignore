@@ -4,3 +4,5 @@
 *.pdf
 *.backup
 *.toc
+
+*.pyc
