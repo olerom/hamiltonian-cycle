@@ -55,17 +55,65 @@
 Если дан граф G = $\langle {V, E} \rangle$, который удовлетворяет условию теоремы Дирака или Оре,
 то в нем можно найти гамильтонов цикл.
 
+Каждый раз, когда нам надо искать вершину $v_i$, где i > 2, такую что $v_{1}v_{i}$, $v_{2}v_{i+1}$ $\in$ E, такая вершина действительно существует.
+
+После $n(n - 1)$ итераций между каждой парой соседних вершин очереди существует ребро.
+
+\subsection{Описание выбранного АТД}
+\subsubsection{Выбранные структура и тип данных}
+Матрица смежнсти вершин.
+\subsubsection{Операторы АТД}
+Метод, который позволяет узнать, есть ли в между двумя веришнами ребро.
+
+\subsection{Формальное описание алгоритма: псевдокод}
+\begin{algorithmic}[1]
+\Procedure{Ore Dirac}{$\langle$ V, E $\rangle$}
+
+\For{v $\in$ V}
+\State queue.pushBack(v)
+\EndFor
+
+\For{k = 0 .. n * (n - 1)}
+
+\If {(queue.at(0), queue.at(1)) $\notin$ E}
+    \State i = 2
+    \State  \While{(queue.at(0), queue.at(i)) $\notin$ E or (queue.at(1), queue.at(i + 1)) $\notin$ E}
+            \State i++
+            \EndWhile
+    \State queue.swapSubQueue(1, i)
+\EndIf
+queue.pushBack(queue.top())
+queue.pop()
+\EndFor
+\EndProcedure
+\end{algorithmic}
+
+\subsection{Программная реализация}
+\lstinputlisting[language=Python]{../hamiltonian_cycle/algorithms/ore_dirac.py}
+
+\subsection{Результаты тестирования}
 
 \section{Рекурсивный алгоритм}
 
 \subsection{Неформальное описание алгоритма, краткое обоснование}
-Рекурсивный алгоритм:)
 
+\subsection{Описание выбранного АТД}
+\subsubsection{Выбранные структура и тип данных}
+Матрица смежнсти вершин.
+\subsubsection{Операторы АТД}
+Метод, который позволяет узнать, есть ли в между двумя веришнами ребро.
 
-\section{Рекурсивный алгоритм с откатами}
+\subsection{Формальное описание алгоритма: псевдокод}
+\begin{algorithmic}[1]
+\Procedure{Recursive}{curr}
+\EndProcedure
+\end{algorithmic}
 
-\subsection{Неформальное описание алгоритма, краткое обоснование}
-Рекурсивный алгоритм:)
+\subsection{Программная реализация}
+\lstinputlisting[language=Python]{../hamiltonian_cycle/algorithms/recursive.py}
+
+\subsection{Результаты тестирования}
+
 
 
 \end{document}
