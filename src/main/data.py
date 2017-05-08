@@ -1,13 +1,6 @@
-# dict way, not hamiltonian:
-graph = {'A': ['B', 'C'],
-         'B': ['C', 'D'],
-         'C': ['D'],
-         'D': ['C'],
-         'E': ['F'],
-         'F': ['C']}
+from graph_adjacency_matrix import *
 
-# hamiltonian graph:
-graph_matrix = [
+hamiltonian_matrix = Graph([
     [0, 1, 0, 0, 0, 0, 1],
     [1, 0, 1, 0, 0, 0, 0],
     [0, 1, 0, 1, 0, 0, 0],
@@ -15,21 +8,20 @@ graph_matrix = [
     [0, 0, 0, 1, 0, 1, 0],
     [0, 0, 0, 0, 1, 0, 1],
     [1, 0, 0, 0, 0, 1, 0]
-]
+])
 
-graph_matrix_test = [
+hamiltonian_matrix_test = Graph([
     [0, 1, 1, 0, 0],
     [1, 0, 0, 1, 0],
     [1, 0, 0, 0, 1],
     [0, 1, 0, 0, 1],
     [0, 0, 1, 1, 0]
-]
+])
 
-# Graph for dirac theorem:
-ore_dirac_graph = [
+ore_dirac_graph = Graph([
     [0, 1, 1, 1, 1],
     [1, 0, 1, 1, 1],
     [1, 1, 0, 1, 1],
     [1, 1, 1, 0, 0],
     [1, 1, 1, 0, 0],
-]
+])

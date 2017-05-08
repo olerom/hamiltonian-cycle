@@ -40,6 +40,7 @@
 
 \subsection{Модель данных}
 Представления графа в виде матрицы смежности.
+\lstinputlisting[language=Python]{../src/main/graph_adjacency_matrix.py}
 
 
 \section{Алгоритм нахождения Гамильтонова цикла в условиях теорем Дирака и Оре}
@@ -89,9 +90,12 @@ queue.pop()
 \end{algorithmic}
 
 \subsection{Программная реализация}
-\lstinputlisting[language=Python]{../hamiltonian_cycle/algorithms/ore_dirac.py}
+\lstinputlisting[language=Python]{../src/main/ore_dirac.py}
 
 \subsection{Результаты тестирования}
+
+\subsection{Выводы о вычислительной сложности на основе тестирования}
+Поиск вершины, удовлетворяющей заданному условию работает за O(n), а таких поисков будет осуществлено не более чем n. Оставшиеся n(n - 2) итерации выполняются за O(1). Тогда алгоритм выполняется за O$(n^2)$.
 
 \section{Рекурсивный алгоритм}
 
@@ -110,7 +114,7 @@ queue.pop()
 \end{algorithmic}
 
 \subsection{Программная реализация}
-\lstinputlisting[language=Python]{../hamiltonian_cycle/algorithms/recursive.py}
+\lstinputlisting[language=Python]{../src/main/recursive.py}
 
 \subsection{Результаты тестирования}
 
