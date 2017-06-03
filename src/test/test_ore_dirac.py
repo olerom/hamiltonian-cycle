@@ -14,7 +14,19 @@ class TestOreDiracAlgorithm(unittest.TestCase):
             [1, 1, 1, 0, 0],
         ])
         ore_dirac = OreDirac(graph)
-        self.assertTrue(path, ore_dirac.get_cycle())
+        self.assertEquals(path, ore_dirac.get_cycle())
+
+    def test_is_condition(self):
+        graph = Graph([
+            [0, 1, 1, 1, 1],
+            [1, 0, 1, 1, 1],
+            [1, 1, 0, 1, 1],
+            [1, 1, 1, 0, 0],
+            [1, 1, 1, 0, 0],
+        ])
+        ore_dirac = OreDirac(graph)
+        self.assertTrue(ore_dirac.is_dirac())
+        self.assertTrue(ore_dirac.is_ore())
 
 
 if __name__ == '__main__':

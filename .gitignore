@@ -4,5 +4,7 @@
 *.pdf
 *.backup
 *.toc
+*.py.lprof
+*.out
 
 *.pyc

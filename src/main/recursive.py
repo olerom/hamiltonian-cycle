@@ -5,6 +5,7 @@ class Recursive:
         self.path = []
         self.graph = graph
 
+    @profile
     def recursive(self, curr):
         self.path.append(curr)
         if len(self.path) == self.n:

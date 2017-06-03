@@ -5,6 +5,7 @@ class OreDirac:
     def set_graph(self, graph):
         self.graph = graph
 
+    @profile
     def get_cycle(self):
         path = []
         n = len(self.graph)
@@ -57,7 +58,6 @@ class OreDirac:
                 if self.graph.is_connected(i, j):
                     edges.remove([i, j])
                     counter += 1
-
             vertex_deg.update({i: counter})
 
         for edge in edges:
